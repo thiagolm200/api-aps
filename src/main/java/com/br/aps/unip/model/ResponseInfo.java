@@ -7,7 +7,10 @@ public class ResponseInfo {
 		this.setName(request.getLocation().getName());
 		this.setRegion(request.getLocation().getRegion());
 		this.setTemp(request.getCurrent().getTemp_c());
-		this.setIcon(request.getCurrent().getCondition().getIcon());
+		
+		String icon128 = request.getCurrent().getCondition().getIcon().replace("64x64", "128x128");
+		
+		this.setIcon(icon128);
 		this.setText(request.getCurrent().getCondition().getText());
 		this.setCo(request.getCurrent().getAir_quality().getCo());
 		this.setNo2(request.getCurrent().getAir_quality().getNo2());
