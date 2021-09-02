@@ -8,7 +8,7 @@ public class ResponseInfo {
 		this.setRegion(request.getLocation().getRegion());
 		this.setTemp(request.getCurrent().getTemp_c());
 		
-		String icon128 = request.getCurrent().getCondition().getIcon().replace("64x64", "128x128");
+		String icon128 = "https:" + request.getCurrent().getCondition().getIcon().replace("64x64", "128x128");
 		
 		this.setIcon(icon128);
 		this.setText(request.getCurrent().getCondition().getText());
