@@ -6,7 +6,7 @@ public class ResponseInfo {
 	{
 		this.setName(request.getLocation().getName());
 		this.setRegion(request.getLocation().getRegion());
-		this.setTemp(request.getCurrent().getTemp_c());
+		this.setTemp(Integer.valueOf(request.getCurrent().getTemp_c().toString()));
 		
 		String icon128 = "https:" + request.getCurrent().getCondition().getIcon().replace("64x64", "128x128");
 		
@@ -26,7 +26,7 @@ public class ResponseInfo {
 	
 	private String region;
 	
-	private Double temp;
+	private Integer temp;
 	
 	private String icon;
 	
@@ -62,11 +62,11 @@ public class ResponseInfo {
 		this.region = region;
 	}
 
-	public Double getTemp() {
+	public Integer getTemp() {
 		return temp;
 	}
 
-	public void setTemp(Double temp) {
+	public void setTemp(Integer temp) {
 		this.temp = temp;
 	}
 
