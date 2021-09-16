@@ -21,7 +21,5 @@ public class RequestInfo {
 	public void setCurrent(Current current) {
 		this.current = current;
 	}
-	
-	
-
 }
+

@@ -17,8 +17,11 @@ public class RestController {
 	@GetMapping(value="info")
 	private ResponseEntity<ResponseInfo> getInformacoes() {
 		
+		String linkAPI = "http://api.weatherapi.com/v1/current.json?key=b3a3e43a20334c3f8a1235239212408&q=Sao Paulo&aqi=yes&lang=pt";
+		
 		RestTemplate restTemplate = new RestTemplate();
-		RequestInfo request = restTemplate.getForObject("http://api.weatherapi.com/v1/current.json?key=b3a3e43a20334c3f8a1235239212408&q=Sao Paulo&aqi=yes&lang=pt", RequestInfo.class);
+		
+		RequestInfo request = restTemplate.getForObject(linkAPI, RequestInfo.class);
 		
 		ResponseInfo response = new ResponseInfo(request);
 		
