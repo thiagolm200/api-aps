@@ -8,6 +8,8 @@ import org.springframework.web.client.RestTemplate;
 
 import com.br.aps.unip.model.RequestInfo;
 import com.br.aps.unip.model.ResponseInfo;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 @org.springframework.web.bind.annotation.RestController
 @RequestMapping("/")
@@ -27,7 +29,9 @@ public class RestController {
 		
 		System.out.println("Get efetuado com sucesso!");
 		
-		System.out.println("Objeto da API: " + request.toString());
+		Gson gson = new GsonBuilder().setPrettyPrinting().create();
+		
+		System.out.println("Objeto completo da API: " + gson.toJson(request));
 		
 		return new ResponseEntity<>(response, HttpStatus.OK);
 	}
