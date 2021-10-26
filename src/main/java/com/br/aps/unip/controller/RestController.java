@@ -25,6 +25,8 @@ public class RestController {
 		
 		ResponseInfo response = new ResponseInfo(request);
 		
+		System.out.println("Get efetuado com sucesso!");
+		
 		return new ResponseEntity<>(response, HttpStatus.OK);
 	}
 }
