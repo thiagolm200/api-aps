@@ -27,6 +27,8 @@ public class RestController {
 		
 		System.out.println("Get efetuado com sucesso!");
 		
+		System.out.println("Objeto da API: " + request);
+		
 		return new ResponseEntity<>(response, HttpStatus.OK);
 	}
 }
